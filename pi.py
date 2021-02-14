@@ -1,5 +1,6 @@
 from multiprocessing import Process
 import random
+from multiprocessing import Pool, cpu_count
 
 def pi_approx(n: int):
     in_circle = 0
@@ -13,8 +14,14 @@ def pi_approx(n: int):
     print(f'PI: {pi}')
 
 def main():
-    p = Process(target=pi_approx, args=(100000,))
-    p.start()
+
+    print(f'starting computations on {cpu_count()} cores')
+
+    number_of_runs = [100000]
+
+    with Pool() as p:
+        pi = p.map(pi_approx, number_of_runs)
+        print(pi)
 
 if __name__ == '__main__':
     main()
