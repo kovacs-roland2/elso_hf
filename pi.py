@@ -17,11 +17,10 @@ def main():
 
     print(f'starting computations on {cpu_count()} cores')
 
-    number_of_runs = [100000]
+    number_of_runs = 100000
 
     with Pool() as p:
-        pi = p.map(pi_approx, number_of_runs)
-        print(pi)
+        pi_approx(number_of_runs)
 
 if __name__ == '__main__':
     main()
