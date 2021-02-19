@@ -10,4 +10,4 @@ def egyenlet(egyenlet, *args, **kwargs) -> int:
   
     return eredmeny
 
-print(egyenlet("a+b+c", a = 2, b = 3))
+print(egyenlet("a+b+c", a = 2, b = 3, c = -4))
