@@ -1,13 +1,5 @@
-def egyenlet(egyenlet, *args, **kwargs) -> int:
-    """
-    A függvény összeadja a beadott értékeket
-    """
-    eredmeny = 0
-    for arg in args:
-        eredmeny += arg
-    for key, value in kwargs.items():
-        eredmeny += value
-  
-    return eredmeny
+numbers = {'a': 3, 'b': -4}
+equation = "a+b+a+a"
 
-print(egyenlet("a+b+c", a = 2, b = 3, c = -4))
+result = sum([numbers[i] for i in equation.split("+")])
+print(result)
